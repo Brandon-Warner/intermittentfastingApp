@@ -6,60 +6,85 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+
     <TextView
-        android:id="@+id/timer"
+        android:id="@+id/fastTimer"
         android:layout_width="110dp"
         android:layout_height="43dp"
         android:text="0:00"
         android:textSize="40dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/caneat"
-        app:layout_constraintHorizontal_bias="0.564"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.156"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.216" />
+        app:layout_constraintTop_toBottomOf="@+id/eatTimer"
+        app:layout_constraintVertical_bias="0.092" />
 
     <TextView
-        android:id="@+id/caneat"
-        android:layout_width="119dp"
-        android:layout_height="41dp"
-        android:layout_marginEnd="56dp"
-        android:text="TextView"
+        android:id="@+id/eatTimer"
+        android:layout_width="110dp"
+        android:layout_height="43dp"
+        android:text="0:00"
+        android:textSize="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/timer" />
+        app:layout_constraintHorizontal_bias="0.156"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.183" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/eatButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="clickEat"
-        android:text="I've Eaten"
+        android:text="@string/eatenbtnLabel"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.256"
+        app:layout_constraintHorizontal_bias="0.255"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/timer"
-        app:layout_constraintVertical_bias="0.1" />
+        app:layout_constraintTop_toBottomOf="@+id/fastTimer"
+        app:layout_constraintVertical_bias="0.202" />
 
     <Switch
         android:id="@+id/sixteenoffeighton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="48dp"
+        android:onClick="clickSixteenToEightToggle"
         android:text="16 off 8 on"
-        app:layout_constraintStart_toStartOf="@+id/button"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintEnd_toEndOf="@+id/twotwentyfouronwithinoneweek"
+        app:layout_constraintTop_toBottomOf="@+id/eatButton" />
 
     <Switch
-        android:id="@+id/twentyfouroffeighton"
+        android:id="@+id/twotwentyfouronwithinoneweek"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
-        android:text="24 off 8 on"
-        app:layout_constraintStart_toStartOf="@+id/button"
+        android:onClick="clicktwotwentyfourToOneWeek"
+        android:text="Two days on within one week"
+        app:layout_constraintStart_toStartOf="@+id/eatButton"
         app:layout_constraintTop_toBottomOf="@+id/sixteenoffeighton" />
 
+    <TextView
+        android:id="@+id/phaseBanner"
+        android:layout_width="199dp"
+        android:layout_height="230dp"
+        android:layout_marginStart="24dp"
+        android:background="@color/eat"
+        android:text="@string/eatBannerText"
+        android:textSize="60sp"
+        app:layout_constraintStart_toEndOf="@+id/eatTimer"
+        tools:layout_editor_absoluteY="87dp" />
 
+    <Button
+        android:id="@+id/resetCycle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:text="Reset"
+        app:layout_constraintStart_toEndOf="@+id/eatButton"
+        app:layout_constraintTop_toTopOf="@+id/eatButton" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
